@@ -1,0 +1,41 @@
+<section class="m-5">
+  <div class="input-group mb-3">
+    <input
+      type="number"
+      [(ngModel)]="cantidad"
+      placeholder="Number of characters"
+      aria-label="Recipient's username"
+      aria-describedby="button-addon2"
+      required="num is require"
+    />
+    <button
+      class="btn btn-danger fs-3 btn btn-outline-warning"
+      type="button"
+      (click)="getCharacters()"
+      id="button-addon2"
+    >
+      See characters
+    </button>
+  </div>
+  <div class="d-flex flex-wrap">
+    <ng-container *ngFor="let character of characters">
+      <div class="card border-dark m-3" style="width: 540px">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              [src]="character.image"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ character.character }}</h5>
+              <p class="card-text">{{ character.quote }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>
